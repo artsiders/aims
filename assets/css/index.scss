@@ -1,0 +1,140 @@
+@import "_settings.scss";
+
+.title_bar {
+    color: white;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    // --bs-purple : white;
+}
+
+.search_bar{
+    margin: 15px 0;
+
+    div{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: calc(80% - 10px) 20%;
+    }
+}
+
+.body_note{
+    height: 70vh;
+    background-color: #e7e7e7;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-y: scroll;
+
+    .note{
+        height: 10vh;
+        background-color: white;
+        border-radius: 4px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 10% 90%;
+        font-family: 'poppins';
+        margin: 10px 0;
+        position: relative;
+
+    }
+    .number{
+        font-size: 20px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .date{
+        position: absolute;
+        bottom: 4px;
+        left: 12px;
+        font-size: 12px;
+        color: gray;
+    }
+}
+
+%popup{
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000048;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content_popup {
+        height: auto;
+        width: auto;
+        background-color: antiquewhite;
+        height: 80vh;
+        width: 80vw;
+        padding: 40px 15px 15px 15px;
+        position: relative;
+    }
+
+    i {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        color: rgb(148, 40, 40);
+    }
+}
+
+.content_details_note{
+    @extend %popup;
+    .action{
+        display: flex;
+        position: absolute;
+        bottom: 20px;
+        button {
+            margin: 0 10px;
+        }
+    }
+}
+.content_form_add_note{
+    @extend %popup;
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    textarea {
+        border: none;
+        outline: none;
+        width: 100%;
+    }
+}
+
+
+.btn_add{
+    height: 60px;
+    width: 60px;
+    background-color: #0d6efd;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 10;
+
+    i {
+        font-size: 25px;
+        color: white;
+    }
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    color: white;
+}
+
+.hide {
+    display: none;
+}
+
